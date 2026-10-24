@@ -16,7 +16,7 @@ func main() {
 		// An attacker can send filename*=iso-8859-1''shell.php to bypass WAF
 		tx := waf.NewTransaction()
 		defer tx.ProcessLogging()
-		tx.ProcessRequestHeaders(r)
+		tx.ProcessRequestHeaders()
 		// ... handle upload
 		fmt.Fprintf(w, "Upload accepted")
 	})
